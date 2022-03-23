@@ -7,8 +7,7 @@ if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )
 
 :getPrivileges
 if '%1'=='ELEV' (echo ELEV & shift /1 & goto gotPrivileges)
-echo.
-echo Nope, Not an Admin, I'll Fix that...
+
 echo.
 echo Click on Yes/OK if the UAC box pops up... thanks 
 
@@ -26,7 +25,7 @@ exit /B
 
 :gotPrivileges
 echo.
-echo Yay, we have Admin rights, moving along... 
+echo Elevation Successfull, Moving along... 
 if '%1'=='ELEV' shift /1
 setlocal & pushd .
 cd /d %~dp0
